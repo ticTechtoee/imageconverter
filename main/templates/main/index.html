@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+
+        <div class="col-md-10 mx-auto">
+
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div class="form-group row">
+                    <label for="">Convert You Image by Uploading the Image Here</label>
+                    <div class="col-sm-6">
+
+                        {{form.upload_image}}
+                    </div>
+                    <div class="col-sm-6">
+                        <button name="btnsave" type="submit" class="btn px-4 float-right" style="background-color:#1a1d4b; color: lightgrey;">Convert</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
