@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+
+        <div class="col-md-10 mx-auto">
+
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div class="form-group row">
+                    <div class="col-sm-3">
+                        <label for="">Name</label>
+                        {{form.name}}
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="">Number</label>
+                        {{form.number}}
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="">Order Number</label>
+                        {{form.order_number}}
+                    </div>
+             
+                        <div class="col-sm-3">
+                            <label for="">Start</label>
+                            <button name="btnsave" type="submit" class="btn px-4 float-right form-control"
+                                style="background-color:#1a1d4b; color: lightgrey;">Generate</button>
+                        </div>
+                    
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
